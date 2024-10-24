@@ -133,11 +133,9 @@ app.post("/createItem2", (req, res) => {
     dataBAse.query(sqlcaca, [caca, categorie_id], (err, result) => {
       if (err) {
         console.error(err);
-        return res
-          .status(500)
-          .json({
-            error: "ERREUR DU SERVEUR lors de l'insertion dans item_categorie",
-          });
+        return res.status(500).json({
+          error: "ERREUR DU SERVEUR lors de l'insertion dans item_categorie",
+        });
       } else {
         return res.status(200).json({ message: "C'est good chef" });
       }
